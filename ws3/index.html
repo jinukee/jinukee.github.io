@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/navbar.css" />
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/footer.css" />
+    <title>메인 페이지</title>
+    <style>
+      article {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto;
+        gap: 10px;
+        margin-top: 5px;
+      }
+
+      article section img {
+        width: 100%;
+      }
+      article section button {
+        padding: 5px;
+        font-size: 15px;
+        width: 80px;
+        float: right;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li class="logo">
+            <a href="index.html"><img src="logo.jpg" /></a>
+          </li>
+          <li><a href="personal.html">개인</a></li>
+          <li><a href="enterprise.html">기업</a></li>
+          <li><a href="login.html">로그인</a></li>
+          <li><a href="register.html">회원가입</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div id="banner">this is an advertisement section</div>
+    <main>
+      <article>
+        <section>
+          <img src=" https://picsum.photos/id/100/200" />
+          <h3>main-item 1</h3>
+          <p>sample text1</p>
+          <button class="main-item" data-main-item-id="10">button1</button>
+        </section>
+        <section>
+          <img src=" https://picsum.photos/id/33/200" />
+          <h3>main-item 2</h3>
+          <p>sample text2</p>
+          <button class="main-item" data-main-item-id="20">button2</button>
+        </section>
+        <section>
+          <img src=" https://picsum.photos/id/130/200" />
+          <h3>main-item 3</h3>
+          <p>sample text3</p>
+          <button class="main-item" data-main-item-id="30">button3</button>
+        </section>
+      </article>
+    </main>
+    <footer>
+      <ul>
+        <li>12345 address 1 address 2</li>
+        <li>02-0101-0101</li>
+      </ul>
+    </footer>
+    <script>
+      let bannerList = [
+        "국민의 은행이 되겠습니다.",
+        "5060 웰컴패키지, 최대 7만원혜택을 드립니다.",
+        "타행이체, 자동이체 수수료 면제",
+        "저녁 6시까지 영업합니다.",
+      ];
+      let index = 0;
+
+      setInterval(() => {
+        document.querySelector("#banner").innerHTML = bannerList[index++];
+        if (index == bannerList.length) index = 0;
+      }, 3000);
+
+      //console.log(document.querySelectorAll(".main-item"));
+      document.querySelectorAll(".main-item").forEach((buttonEle) => {
+        buttonEle.addEventListener("click", () => {
+          alert(event.target.dataset.mainItemId);
+        });
+      });
+    </script>
+  </body>
+</html>

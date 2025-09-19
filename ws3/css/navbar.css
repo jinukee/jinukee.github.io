@@ -1,0 +1,40 @@
+header nav ul li a {
+  text-decoration: none;
+}
+
+/*한 번도 방문한 적이 없는 경우*/
+header nav ul li a:link {
+  color: red;
+}
+
+header nav ul li a:visited {
+  color: green;
+}
+
+header nav ul li a:hover {
+  color: blueviolet;
+  text-decoration: underline;
+}
+
+/*menu bar 를 가로 방향으로 놓기*/
+nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav ul li {
+  list-style-type: none;
+  margin: 0 10px;
+}
+
+nav ul li a img {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+}
+
+nav {
+  background-color: beige;
+  padding: 5px;
+}

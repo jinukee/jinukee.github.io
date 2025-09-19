@@ -1,0 +1,13 @@
+#banner {
+  background-color: aqua;
+  color: white;
+  font-size: xx-large;
+  text-align: center;
+  padding: 30px;
+  text-shadow: 5px 5px 5px black;
+}
+
+/*padding, border 속성과 무관하게 절대적인 box size 를 fix*/
+* {
+  box-sizing: border-box;
+}
